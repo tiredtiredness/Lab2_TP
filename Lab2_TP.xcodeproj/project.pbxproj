@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F4C249C2B17E6710066798A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C249B2B17E6710066798A /* main.cpp */; };
+		9F4C24A42B17E8820066798A /* Train.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C24A22B17E8820066798A /* Train.cpp */; };
+		9F4C24A72B17E88D0066798A /* Keeper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C24A52B17E88D0066798A /* Keeper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		9F4C24982B17E6710066798A /* Lab2_TP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab2_TP; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4C249B2B17E6710066798A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9F4C24A22B17E8820066798A /* Train.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Train.cpp; sourceTree = "<group>"; };
+		9F4C24A32B17E8820066798A /* Train.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Train.hpp; sourceTree = "<group>"; };
+		9F4C24A52B17E88D0066798A /* Keeper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Keeper.cpp; sourceTree = "<group>"; };
+		9F4C24A62B17E88D0066798A /* Keeper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Keeper.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,10 @@
 		9F4C249A2B17E6710066798A /* Lab2_TP */ = {
 			isa = PBXGroup;
 			children = (
+				9F4C24A52B17E88D0066798A /* Keeper.cpp */,
+				9F4C24A62B17E88D0066798A /* Keeper.hpp */,
+				9F4C24A22B17E8820066798A /* Train.cpp */,
+				9F4C24A32B17E8820066798A /* Train.hpp */,
 				9F4C249B2B17E6710066798A /* main.cpp */,
 			);
 			path = Lab2_TP;
@@ -119,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4C24A42B17E8820066798A /* Train.cpp in Sources */,
 				9F4C249C2B17E6710066798A /* main.cpp in Sources */,
+				9F4C24A72B17E88D0066798A /* Keeper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

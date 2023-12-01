@@ -1,13 +1,22 @@
-//
-//  Keeper.hpp
-//  Lab2_TP
-//
-//  Created by Константин Комаров on 30.11.2023.
-//
+#pragma once
 
-#ifndef Keeper_hpp
-#define Keeper_hpp
+#include <iostream>
+#include "Train.hpp"
 
-#include <stdio.h>
+using namespace std;
 
-#endif /* Keeper_hpp */
+class Keeper {
+private:
+    Train** data;
+    int size;
+public:
+    Keeper();
+    ~Keeper();
+    int getSize();
+    void add();
+    void edit();
+    void del();
+    void find();
+    void sort();
+    friend ostream& operator<<(ostream& out, Keeper& obj);
+};

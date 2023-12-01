@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <ctime>
 
@@ -15,6 +17,7 @@ public:
     string getDestination();
     int getNumber();
     time_t getDeparture();
+    void print();
     friend istream& operator>>(istream& in, Train& train);
     friend ostream& operator<<(ostream& out, Train& train);
 };
