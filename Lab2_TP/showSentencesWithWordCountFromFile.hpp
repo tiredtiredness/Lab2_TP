@@ -6,4 +6,4 @@
 
 using namespace std;
 
-vector<string> getSentencesWithWordCountFromFile(string filename, int wordCount);
+void showSentencesWithWordCountFromFile(string filepath, int wordCount);

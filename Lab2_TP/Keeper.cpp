@@ -34,17 +34,34 @@ void Keeper::add() {
 }
 
 void Keeper::edit() {
+    if (size == 0) {
+        
+    }
     cout << "Выберите элемент списка для редактирования" << endl;
     for (int i = 0; i < size; i++) {
         cout << "[" << i+1 << "] " << data[i]->getNumber() << endl;
     }
+    int num;
+    cin >> num;
+    cout << "Редактирование поезда №" << data[num-1]->getNumber() << endl;
+    cin >> *data[num-1];
+    sort();
 }
 
 void Keeper::del() {
+    if (size == 0) {
+        throw "Список поездов пуст!";
+    }
     cout << "Выберите элемент списка для удаления" << endl;
     for (int i = 0; i < size; i++) {
-        cout << "[" << i << "]" << data[i]->getNumber() << endl;
+        cout << "[" << i+1 << "] " << data[i]->getNumber() << endl;
     }
+    int num;
+    cin >> num;
+    for (int i = num - 1; i < size; i++) {
+        data[i] = data[i + 1];
+    }
+    size--;
 }
 
 void Keeper::sort() {
@@ -65,14 +82,20 @@ void Keeper::sort() {
 }
 
 void Keeper::find() {
+    if (size == 0) {
+        cout << "Ни одного элемента еще не было добавлено!" << endl;
+        return;
+    }
     int num;
     cout << "Введите номер поезда: ";
     cin >> num;
     for (int i = 0; i < size; i++) {
         if (data[i]->getNumber() == num) {
             data[i]->print();
+            return;
         }
     }
+    cout << "Поезд не найден." << endl;
 }
 
 ostream&  operator<<(ostream& out, Keeper& obj) {

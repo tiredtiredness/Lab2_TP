@@ -4,14 +4,16 @@
 
 using namespace std;
 
-void getSentencesWithWordCountFromFile(string filename, int wordCount) {
-    ifstream file(filename);
-    vector<string> sentences;
+void showSentencesWithWordCountFromFile(string filepath, int wordCount) {
+    ifstream file(filepath);
     if (!file.is_open()) {
-        cerr << "Невозможно открыть файл " << filename << endl;
-        return sentences;
+        cerr << "Невозможно открыть файл " << filepath << endl;
     }
-    
-    
-    return vector<string>();
+    string sentence;
+    string word;
+    int currWordCount = 0;
+    char c;
+    while (file.get(c)) {
+
+    }
 }

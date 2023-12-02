@@ -1,10 +1,28 @@
 #include <iostream>
+#include <fstream>
 #include "Train.hpp"
 #include "Keeper.hpp"
+#include "showSentencesWithWordCountFromFile.hpp"
 
 using namespace std;
 
+void main1();
+void main2();
+
+#define USE_MAIN1 false
+
 int main() {
+    if (USE_MAIN1)
+        main1();
+    else
+        main2();
+
+    return 0;
+}
+
+
+void main1() {
+    
     Keeper trains;
     int i;
 
@@ -34,8 +52,11 @@ int main() {
                 cout << trains;
                 break;
             case 0:
-                return 0;
+                return;
         }
     }
-    return 0;
+}
+
+void main2() {
+    showSentencesWithWordCountFromFile("/Users/tiredtiredness/Documents/xcode projects/Lab2_TP/Lab2_TP/file.txt", 2);
 }

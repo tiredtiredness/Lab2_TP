@@ -17,6 +17,12 @@ Train::Train(string destination, int number, time_t departure) {
     this->departure = departure;
 }
 
+Train::Train(Train& other) {
+    other.number = this->number;
+    other.destination = this->destination;
+    other.departure = this->departure;
+}
+
 Train::~Train() {
     cout << "Вызов деструктора класса Train" << endl;
 }
@@ -31,6 +37,21 @@ int Train::getNumber() {
 
 time_t Train::getDeparture() {
     return departure;
+}
+
+void Train::setDestination() {
+    cout << "Введите место прибытия ";
+    cin >> destination;
+}
+
+void Train::setNumber() {
+    cout << "Введите номер поезда ";
+    cin >> number;
+}
+
+void Train::setDeparture() {
+    cout << "Введите время отправления ";
+    cin >> departure;
 }
 
 void Train::print() {

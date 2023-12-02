@@ -13,10 +13,14 @@ private:
 public:
     Train();
     Train(string, int, time_t);
+    Train(Train&);
     ~Train();
     string getDestination();
     int getNumber();
     time_t getDeparture();
+    void setDestination();
+    void setNumber();
+    void setDeparture();
     void print();
     friend istream& operator>>(istream& in, Train& train);
     friend ostream& operator<<(ostream& out, Train& train);
