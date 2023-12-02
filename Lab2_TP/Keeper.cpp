@@ -26,6 +26,7 @@ void Keeper::add() {
     for (int i = 0; i < size; i++) {
         new_trains[i] = data[i];
     }
+    
     new_trains[size] = train;
     delete[] data;
     data = new_trains;
@@ -35,7 +36,7 @@ void Keeper::add() {
 
 void Keeper::edit() {
     if (size == 0) {
-        
+        cerr << "Список поездов пуст!" << endl;
     }
     cout << "Выберите элемент списка для редактирования" << endl;
     for (int i = 0; i < size; i++) {
@@ -43,6 +44,10 @@ void Keeper::edit() {
     }
     int num;
     cin >> num;
+    if (num > size || num < 1) {
+        cout << "Ошибка: неверный индекс." << endl;
+        return;
+    }
     cout << "Редактирование поезда №" << data[num-1]->getNumber() << endl;
     cin >> *data[num-1];
     sort();
@@ -50,7 +55,7 @@ void Keeper::edit() {
 
 void Keeper::del() {
     if (size == 0) {
-        throw "Список поездов пуст!";
+        cerr << "Список поездов пуст!" << endl;
     }
     cout << "Выберите элемент списка для удаления" << endl;
     for (int i = 0; i < size; i++) {
@@ -58,6 +63,10 @@ void Keeper::del() {
     }
     int num;
     cin >> num;
+    if (num > size || num < 1) {
+        cout << "Ошибка: неверный индекс." << endl;
+        return;
+    }
     for (int i = num - 1; i < size; i++) {
         data[i] = data[i + 1];
     }
@@ -83,12 +92,15 @@ void Keeper::sort() {
 
 void Keeper::find() {
     if (size == 0) {
-        cout << "Ни одного элемента еще не было добавлено!" << endl;
-        return;
+        cerr << "Список поездов пуст!" << endl;
     }
     int num;
     cout << "Введите номер поезда: ";
     cin >> num;
+    if (num > size || num < 1) {
+        cout << "Ошибка: неверный индекс." << endl;
+        return;
+    }
     for (int i = 0; i < size; i++) {
         if (data[i]->getNumber() == num) {
             data[i]->print();
