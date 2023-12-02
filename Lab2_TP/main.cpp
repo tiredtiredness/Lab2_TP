@@ -58,5 +58,5 @@ void main1() {
 }
 
 void main2() {
-    showSentencesWithWordCountFromFile("/Users/tiredtiredness/Documents/xcode projects/Lab2_TP/Lab2_TP/file.txt", 2);
+    showSentencesWithWordCountFromFile("/Users/tiredtiredness/Documents/xcode projects/Lab2_TP/Lab2_TP/file.txt", 4);
 }

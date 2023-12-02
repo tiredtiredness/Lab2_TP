@@ -10,10 +10,23 @@ void showSentencesWithWordCountFromFile(string filepath, int wordCount) {
         cerr << "Невозможно открыть файл " << filepath << endl;
     }
     string sentence;
-    string word;
-    int currWordCount = 0;
-    char c;
-    while (file.get(c)) {
-
+    int count = 0;
+    bool inWord = false;
+    while (getline(file, sentence)) {
+        count = 0;
+        for (char c : sentence) {
+            if (std::isalnum(c)) { // если текущ символ буква/цифра, то началось слово
+                if (!inWord) {
+                    count++;
+                    inWord = true;
+                }
+            } 
+            else {
+                inWord = false;
+            }
+        }
+        if (count == wordCount) {
+            cout << sentence << endl;
+        }
     }
 }
