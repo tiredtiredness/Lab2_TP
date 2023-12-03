@@ -9,7 +9,7 @@ using namespace std;
 void main1();
 void main2();
 
-#define USE_MAIN1 true
+#define USE_MAIN1 false
 
 int main() {
     if (USE_MAIN1)

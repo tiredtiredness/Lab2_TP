@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 
 using namespace std;
@@ -10,21 +11,16 @@ void showSentencesWithWordCountFromFile(string filepath, int wordCount) {
         cerr << "Невозможно открыть файл " << filepath << endl;
     }
     string sentence;
-    int count = 0;
-    bool inWord = false;
     while (getline(file, sentence)) {
-        count = 0;
-        for (char c : sentence) {
-            if (std::isalnum(c)) { // если текущ символ буква/цифра, то началось слово
-                if (!inWord) {
-                    count++;
-                    inWord = true;
-                }
-            } 
-            else {
-                inWord = false;
-            }
+        istringstream iss(sentence);
+        string word;
+        int count = 0;
+
+        while (iss >> word) {
+            ++count;
         }
+
+        // Проверяем, соответствует ли количество слов заданному
         if (count == wordCount) {
             cout << sentence << endl;
         }
